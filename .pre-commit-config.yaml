@@ -1,5 +1,5 @@
 exclude: "^docs/|/migrations/"
-default_stages: [commit]
+default_stages: [pre-commit]
 
 repos:
   - repo: https://github.com/bwhmather/ssort
@@ -36,6 +36,8 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
+        args: ["--line-length=120"]
+      - id: black-jupyter
         args: ["--line-length=120"]
 
   - repo: https://github.com/PyCQA/isort
