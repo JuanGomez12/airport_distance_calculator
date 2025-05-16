@@ -1,0 +1,4 @@
+airportsdata==20250224
+fastapi[standard]
+pre-commit==4.2.0
+vincenty==0.1.4
