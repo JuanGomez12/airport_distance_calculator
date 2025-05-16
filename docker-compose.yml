@@ -1,0 +1,13 @@
+services:
+  airport_api:
+    build:
+      context: .
+    container_name: airport_api
+    ports:
+    - "8000:8000"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    command:   fastapi run main.py --reload --host 0.0.0.0
